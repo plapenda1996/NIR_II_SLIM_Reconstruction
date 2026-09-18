@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "NIR-II SLIM: squeezed light-field microscopy for volumetric imaging in the 1,000-1,700 nm window"
+abstract: >-
+  Reconstruction and analysis code for NIR-II squeezed light-field imaging
+  microscopy (SLIM).
+authors:
+  - family-names: "Cui"
+    given-names: "Qi"
+  - name: "see the manuscript author list"
+repository-code: "https://github.com/plapenda1996/NIR_II_SLIM_Reconstruction"
+license: MIT
+identifiers:
+  - type: doi
+    value: 10.64898/2026.08.13.744709
+    description: Preprint
+  - type: doi
+    value: 10.5281/zenodo.22184824
+    description: Dataset and trained model checkpoints
+preferred-citation:
+  type: article
+  title: "NIR-II SLIM: squeezed light-field microscopy for volumetric imaging in the 1,000-1,700 nm window"
+  authors:
+    - family-names: "Cui"
+      given-names: "Qi"
+    - name: "see the manuscript author list"
+  doi: 10.64898/2026.08.13.744709
+  year: 2026
