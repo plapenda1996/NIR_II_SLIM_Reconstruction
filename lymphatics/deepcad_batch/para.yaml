@@ -1,0 +1,23 @@
+# NIR-II SLIM - self-supervised denoising (parameters) - produces representative training/inference parameter file
+# environment: heart_valve_py314
+# copied from D:\NIR2SLIM\DeepCAD_RT_pytorch\pth\record_03102025_170648_40hz\para.yaml on 2026-09-17
+GPU: '0'
+b1: 0.5
+b2: 0.999
+batch_size: 1
+datasets_path: D:/NIR_SLIM2/DeepCAD_RT_pytorch/datasets/record_03102025_170648_40hz
+fmap: 16
+gap_t: 26
+gap_x: 90
+gap_y: 90
+lr: 2.0e-05
+n_epochs: 5
+output_dir: ./results
+overlap_factor: 0.4
+patch_t: 150
+patch_x: 150
+patch_y: 150
+pth_path: ./pth/record_03102025_170648_40hz
+scale_factor: 1.0
+select_img_num: 1000000.0
+train_datasets_size: 2323.0
