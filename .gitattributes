@@ -1,0 +1,4 @@
+# store every file byte-for-byte (the sha256 values in MANIFEST.md refer to the files as committed)
+* -text
+*.mlapp binary
+*.mat binary

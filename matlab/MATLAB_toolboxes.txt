@@ -1,0 +1,15 @@
+MATLAB environment used for reconstruction and for the zebrafish chamber U-Net.
+
+MATLAB R2024a Update 3
+  Image Processing Toolbox
+  Deep Learning Toolbox
+  Computer Vision Toolbox
+  Parallel Computing Toolbox
+GPU: NVIDIA RTX 4090, CUDA 12.2
+
+The exact `ver` output was not captured on the analysis machine; the list above is the
+set of toolboxes the scripts call. Regenerate with:
+
+    >> ver
+
+and paste the result here before release.
