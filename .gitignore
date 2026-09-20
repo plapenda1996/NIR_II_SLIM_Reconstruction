@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.bak
+*.asv
+*.tif
+*.tiff
+*.raw
+*.mat
+*.mp4
+*.pth
+*.npz
+.DS_Store
+Thumbs.db

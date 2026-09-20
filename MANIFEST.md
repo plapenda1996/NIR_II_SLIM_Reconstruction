@@ -28,7 +28,7 @@ is the original before the header was added.
 | `stitching/slim_recon/viewer.py` | `E:\260325_stitch_process_dy_ver2\slim_recon\viewer.py` | 20,228 | Fig. 3d, 3j (imported by stitch_tool.py / pulse_gui_main.py) | `stitch_py311` |
 | `stitching/slim_recon/visualization.py` | `E:\260325_stitch_process_dy_ver2\slim_recon\visualization.py` | 7,891 | Fig. 3d, 3j (imported by stitch_tool.py / pulse_gui_main.py) | `stitch_py311` |
 | `stitching/stitch_tool.py` | `E:\260325_stitch_process_dy_ver2\stitch_tool.py` | 71,849 | Fig. 3d, 3j | `stitch_py311` |
-| `lymphatics/analyze_pulseresults.py` | `E:\260325_stitch_process_dy_ver2\analyze_pulseresults_revised.py` | 55,602 | Fig. 3k-m; 885 +/- 149 um/s, transport distance, FWHM | `pulse_py314` |
+| `lymphatics/analyze_pulseresults.py` | `E:\260325_stitch_process_dy_ver2\analyze_pulseresults_revised.py` | 55,602 | Fig. 3k-m; 885 +/- 149 um/s as run at 4.0 um/px (941 +/- 158 after calibration, see CALIBRATION.md), transport distance, FWHM | `pulse_py314` |
 | `lymphatics/deepcad_batch/deepcad_denoise_batch.py` | `D:\NIR2SLIM\DeepCAD_RT_pytorch_ver2\Deepcad denoise batch.py` | 22,064 | Fig. 3j-m, Supp. Fig. 6d | `heart_valve_py314` |
 | `lymphatics/deepcad_batch/deepcad_train_pick.py` | `D:\NIR2SLIM\DeepCAD_RT_pytorch_ver2\deepcad_train_pick.py` | 6,091 | Fig. 3j-m, Supp. Fig. 6d | `heart_valve_py314` |
 | `lymphatics/deepcad_batch/para.yaml` | `D:\NIR2SLIM\DeepCAD_RT_pytorch\pth\record_03102025_170648_40hz\para.yaml` | 405 | representative training/inference parameter file | `heart_valve_py314` |
@@ -42,14 +42,14 @@ is the original before the header was added.
 
 | repo path | sha256 (repo) | sha256 (source) |
 |---|---|---|
-| `zebrafish_heart/analyze_heart_ver6.py` | `a3126c907f48141b75ecde93e87460bb…` | `4373359cfad6f524e76e0cecf0d3de5e…` |
+| `zebrafish_heart/analyze_heart_ver6.py` | `4a791e24d37f305bbed338d882a2af8b…` | `4373359cfad6f524e76e0cecf0d3de5e…` |
 | `zebrafish_heart/elastix_bspline_params_resolved.txt` | `a149530e276b9c21bf2f5b60feddc673…` | `f8baea0846e3bbc2161c7ef0d4a73513…` |
 | `zebrafish_heart/leaflet_unet.py` | `970f7b0b6f9160b9dccbb200a9eeae97…` | `65b61d773720102493dffc7bb9a2a665…` |
 | `zebrafish_heart/matlab_unet/test_segmentation_XYZT.m` | `14b85b5b27d5b2fb083f6c1f6599193c…` | `e5b28023ebfb14cf630968b462533887…` |
 | `zebrafish_heart/matlab_unet/test_segmentation_XYZT_fish_251110.m` | `9f6533c2a037d33b5062473fc8ffb11b…` | `fd6a60dcf61814c3de429c7173a8b6bf…` |
 | `zebrafish_heart/valve_analysis.py` | `36d6e91902f131e6630bfd1c1c49b178…` | `2550cabf7ccfd33720005d1bed6f0667…` |
-| `mouse_ear/ROI_analysis_2.py` | `cadc1f465a65c9e6ea9d4296db7abe3b…` | `63adfc3d4bd96690f7a806e83348ef07…` |
-| `mouse_ear/ROI_analysis_mouse_ear.py` | `fbda4ed32c4bf8d2c730d658531f8554…` | `997ad3f7b6bd5c217b2e5903cc668271…` |
+| `mouse_ear/ROI_analysis_2.py` | `b0cd0e1580fb3f78c14fd63418eaf8ab…` | `63adfc3d4bd96690f7a806e83348ef07…` |
+| `mouse_ear/ROI_analysis_mouse_ear.py` | `ea8869257dab17c86ba43935d7dbdb00…` | `997ad3f7b6bd5c217b2e5903cc668271…` |
 | `stitching/slim_recon/__init__.py` | `7e122f673a2f94e5dfb16de3d9ff8f7c…` | `e3b0c44298fc1c149afbf4c8996fb924…` |
 | `stitching/slim_recon/blend_export.py` | `ce15d789ed0ff23da480937a3d134200…` | `34a993a2ac8eaf8e7690ccf1e50ec968…` |
 | `stitching/slim_recon/data_io.py` | `8101e424859e11086946a34dfa4df30a…` | `06eb97944d5c99a79ef09be100e412f0…` |
@@ -68,7 +68,7 @@ is the original before the header was added.
 | `lymphatics/deepcad_batch/para.yaml` | `a709a3245d0f4173282c44b9b4ae09aa…` | `a69e322c08d05863af01f6349a77cd08…` |
 | `lymphatics/pulse_gui_main.py` | `60e9b94f5820c504a1528dca5abefc11…` | `92efc64428687ee8b58b07a4438fa993…` |
 | `lymphatics/pulse_pipeline_standalone.py` | `a564881f0bd583f18d601bb2f263c5c7…` | `80b7080f54f7a269c47058f998d9c8ed…` |
-| `figures_videos/Depth_cycle_video_gui.py` | `ee9b79093c4e54a8b268037839806583…` | `4dfde8742bbe954e7bc01488d5b48ced…` |
+| `figures_videos/Depth_cycle_video_gui.py` | `69e09b06b923439849d8c3643f3ddec7…` | `4dfde8742bbe954e7bc01488d5b48ced…` |
 | `figures_videos/fill_to_dashed_outline.py` | `dab0004411abb0510b869d722d790d24…` | `c11ed4c72614a39f4a97fedf7b584381…` |
 | `figures_videos/paw_suppfig.py` | `2c8bd9dbb9975431baa0328e0e0f9862…` | `1bdf6f7b769ef89865808359a180bec3…` |
 
@@ -85,7 +85,7 @@ reversed without re-running the search.
 | `mouse_ear/ROI_analysis_mouse_ear.py` | `D:\NIR2SLIM\demotion\` copy | `D:\NIR_SLIM2\demotion\` copy | the two are sha256-identical; the NIR2SLIM copy was taken |
 | `lymphatics/analyze_pulseresults.py` | `analyze_pulseresults_revised.py` (939 lines) | `analyze_pulseresults.py` (721 lines) | the revised version is the one that emits bolus end positions |
 | `lymphatics/pulse_gui_main.py` | `main.py` (28,490 lines, 2026-09-01) | `main _0901.py` (sha-identical duplicate), `main _0720.py`, `main_0624/0705/0710.py`, `main - Copy*.py` | newest; matches the ~28k-line GUI named in the Methods |
-| `figures_videos/paw_suppfig.py` | `E:\Selected data\260310_mouse_paw\paw_suppfig_revised.py` | `paw_suppfig.py` (older) and 18 copies under `C:\Users\qicui\Downloads\` | newest in the project folder rather than a browser-download copy |
+| `figures_videos/paw_suppfig.py` | `E:\Selected data\260310_mouse_paw\paw_suppfig_revised.py` | `paw_suppfig.py` (older) and older downloaded copies | newest in the project folder rather than a browser-download copy |
 
 ## Deliberately not copied
 
@@ -95,4 +95,28 @@ reversed without re-running the search.
 - `PulseFlowAnalyzer.py` / `PulseFlowAnalyzer_v2.py` (`D:\NIR2SLIM\demotion\`, 2026-04) — an earlier concatenated-stack pulse/flow tool superseded by `pulse_pipeline_standalone.py`; **confirm before release** if any reported number came from it.
 - `heart3d.py` (parametric cartoon heart model), `compare_coverage.py`, `Nature style plots.py`, `depth scalebar export.py` (code fragments, not runnable scripts).
 
-> The `.mat` files under `matlab/third_party/MIMT/cs_conversion_tools/` are colour-space lookup tables belonging to the MIMT toolbox. They were already in the repository before this branch and are third-party code assets, not experimental data.
+> The MIMT toolbox that was previously vendored under `matlab/third_party/MIMT/` has been removed; see `matlab/third_party/README.md`.
+
+## Changes made for the public release (2026-09-20)
+
+The files above are byte-identical to the versions that were run (apart from the provenance header) **except**:
+
+| file | change |
+|---|---|
+| `zebrafish_heart/analyze_heart_ver6.py` | CONFIG `fps` 400 → 600, `pixel_size` 15.0 → 5.616, `z_spacing` 30.0 → 20.0 (values reported in the paper) |
+| `figures_videos/Depth_cycle_video_gui.py` | `MAG_PRESETS`: high 11.0 → 5.616 µm/px; low 30.3 → 17.0 µm/px, dz 100 → 60 µm, bar 1000 → 600 µm (256-px frames) |
+| `mouse_ear/ROI_analysis_mouse_ear.py` | replaced by its successor (`…_ver2.py`: the same code plus the Fig. 3f export and line-ROI save/load functions; no existing line was changed), then GUI defaults 11.0 µm/px, 30 fps → 17.0 µm/px, 20 volumes s⁻¹ |
+| `mouse_ear/ROI_analysis_2.py` | GUI defaults 11.0 µm/px, 30 fps → 17.0 µm/px, 20 volumes s⁻¹ |
+
+Removed: `*.bak`, `__pycache__/`, the duplicate root `main.mlapp` (the GUI must be started from `matlab/slim_app/`,
+where `utils/` is), `environments/requirements_pulse_py314.txt` (identical to `requirements_heart_valve_py314.txt`)
+and the vendored MIMT toolbox.
+
+Added:
+
+| file | purpose | sha256 (repo) |
+|---|---|---|
+| `mouse_ear/fig3f_roi_trace.py` | Fig. 3f ROI traces and Source Data export | `7b332c905112d7b41303d012950975b2…` |
+| `figures_videos/fix_video_overlays.py` | post-export correction of the Supplementary Video overlays | `ec969c2e65a9dbf2a14255dc7b0a4f6b…` |
+| `figures_videos/plot_fig3m.py` | Fig. 3m plot body | `559d0b5a2d59d7a8206bbae9899d048c…` |
+| `source_data/rescale_source_data.py` | pixel-size rescaling that yields the Source Data of Fig. 2c–f, 3g, 3l, 3m | `c164523ebb65b66d53fd757b09870c09…` |

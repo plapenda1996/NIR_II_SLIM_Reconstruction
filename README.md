@@ -12,9 +12,10 @@ produced the figures and the numbers reported in the paper.
 
 ```
 NIR_II_SLIM_Reconstruction/
-├── main.mlapp                  reconstruction GUI (App Designer) — entry point
-├── matlab/slim_app/            reconstruction implementation and utilities
-├── matlab/third_party/MIMT     third-party MATLAB image-manipulation toolbox
+├── matlab/slim_app/            reconstruction GUI (main.mlapp — entry point), implementation and utilities
+├── matlab/third_party/         note on the external MIMT toolbox (required, not redistributed)
+├── CALIBRATION.md              pixel sizes and acquisition rates: values in the paper vs. values in the scripts
+├── source_data/                rescaling of the analysis exports to the calibrated pixel sizes
 ├── environments/               dependency lists, MATLAB toolboxes, DeepCAD-RT provenance
 ├── zebrafish_heart/            chamber registration/strain, valve segmentation and kinetics,
 │                               MATLAB U-Net chamber segmentation
@@ -35,23 +36,26 @@ the analysis folders were added alongside it.
 
 | Script | Produces | Input data | Environment |
 |---|---|---|---|
-| `main.mlapp`, `matlab/slim_app/` | all reconstructed volumes | raw `.raw` + `*_geo_*.mat` + `*_psf_*.mat` | MATLAB R2024a |
+| `matlab/slim_app/main.mlapp`, `matlab/slim_app/` | all reconstructed volumes | raw `.raw` + `*_geo_*.mat` + `*_psf_*.mat` | MATLAB R2024a |
 | `zebrafish_heart/matlab_unet/test_segmentation_XYZT*.m` | chamber masks, Fig. 2b–h | reconstructed zebrafish stacks | MATLAB R2024a |
-| `zebrafish_heart/analyze_heart_ver6.py` | chamber areas per plane, dV/dt, strain rate — Fig. 2c–h | `segmentation_4D_RGB_*.tif` | `requirements_heart_valve_py314.txt` |
+| `zebrafish_heart/analyze_heart_ver6.py` | per-plane areas, dV/dt and perimeter strain rate (Fig. 2g,h); for the published Fig. 2c–f values see [`zebrafish_heart/README.md`](zebrafish_heart/README.md) | `segmentation_4D_RGB_*.tif` | `requirements_heart_valve_py314.txt` |
 | `zebrafish_heart/elastix_bspline_params_resolved.txt` | the resolved B-spline parameter map actually used | — | SimpleElastix 3.0.0a1.post183 |
-| `zebrafish_heart/leaflet_unet.py` | AV valve leaflet masks — Fig. 2i–m | reconstructed zebrafish stacks | `requirements_heart_valve_py314.txt` |
+| `zebrafish_heart/leaflet_unet.py` | constants and helper functions imported by `valve_analysis.py`; its U-Net tracking branch was **not** used for the paper (`USE_UNET_VALVE_TRACKING = False`, leaflets were annotated manually) | reconstructed zebrafish stacks | `requirements_heart_valve_py314.txt` |
 | `zebrafish_heart/valve_analysis.py` | valve opening/closing kinetics — Fig. 2i–m | leaflet masks | `requirements_heart_valve_py314.txt` |
-| `mouse_ear/ROI_analysis_mouse_ear.py` | position–time kymographs, wavefront slope — Fig. 3e–g | 20-vps ear recordings | `requirements_heart_valve_py314.txt` |
+| `mouse_ear/ROI_analysis_mouse_ear.py` | position–time kymographs, wavefront slope — Fig. 3e–g; Fig. 3f trace export together with `mouse_ear/fig3f_roi_trace.py` | 20-vps ear recordings | `requirements_heart_valve_py314.txt` |
 | `mouse_ear/ROI_analysis_2.py` | arrival-time cross-check — Fig. 3e–g | same | `requirements_heart_valve_py314.txt` |
 | `stitching/stitch_tool.py` + `stitching/slim_recon/` | tile registration, blending, depth colour-coded maps — Fig. 3d, 3j | multi-tile recordings | `requirements_stitch_py311.txt` |
 | `lymphatics/pulse_gui_main.py` | reconstruction + pulse-analysis GUI; writes `*_pulseresults.json` | raw lymphatic recordings | `requirements_stitch_py311.txt` |
-| `lymphatics/pulse_pipeline_standalone.py` | non-interactive reproduction of the pulse pipeline — Fig. 3k–m | denoised lymphatic stacks | `requirements_pulse_py314.txt` |
-| `lymphatics/analyze_pulseresults.py` | pulse velocity (885 ± 149 µm s⁻¹), transport distance, FWHM, bolus end positions — Fig. 3k–m | `*_pulseresults.json` | `requirements_pulse_py314.txt` |
-| `lymphatics/deepcad_batch/deepcad_train_pick.py` | per-recording DeepCAD models | raw ≥ 100-vps recordings | `requirements_heart_valve_py314.txt` |
+| `lymphatics/pulse_pipeline_standalone.py` | non-interactive reproduction of the pulse pipeline — Fig. 3k–m | denoised lymphatic stacks | `requirements_heart_valve_py314.txt` |
+| `lymphatics/analyze_pulseresults.py` | pulse velocity (885 ± 149 µm s⁻¹ with the 4.0 µm/px used at run time = 941 ± 158 µm s⁻¹ after calibration to 4.25 µm/px, see `CALIBRATION.md`), transport distance, FWHM, bolus end positions — Fig. 3k–m | `*_pulseresults.json` | `requirements_heart_valve_py314.txt` |
+| `lymphatics/deepcad_batch/deepcad_train_pick.py` | per-recording DeepCAD models | raw lymphatic recordings | `requirements_heart_valve_py314.txt` |
 | `lymphatics/deepcad_batch/deepcad_denoise_batch.py` | denoised stacks — Fig. 3j–m, Supp. Fig. 6d | raw + trained `.pth` | `requirements_heart_valve_py314.txt` |
 | `figures_videos/paw_suppfig.py` | SBR/CNR and FWHM vs depth (Supp. Fig. 6), paw panels (Supp. Fig. 7) | reconstructed `record_*_rl.mat` | `requirements_heart_valve_py314.txt` |
-| `figures_videos/Depth_cycle_video_gui.py` | Supplementary Videos 1–6 | per-depth TIFF stacks | `requirements_heart_valve_py314.txt` |
+| `figures_videos/Depth_cycle_video_gui.py` | Supplementary Videos 1–7 (overlays corrected afterwards with `fix_video_overlays.py`) | per-depth TIFF stacks | `requirements_heart_valve_py314.txt` |
 | `figures_videos/fill_to_dashed_outline.py` | dashed chamber outlines used in Fig. 2 panels | `segmentation_4D_RGB.tif` | `requirements_heart_valve_py314.txt` |
+| `figures_videos/fix_video_overlays.py` | scale bars / time stamps of the released Supplementary Videos (post-export correction) | exported MP4 | `requirements_heart_valve_py314.txt` + ffmpeg |
+| `figures_videos/plot_fig3m.py` | Fig. 3m plot body | `SourceData_Fig3m_*.csv` | `requirements_heart_valve_py314.txt` |
+| `source_data/rescale_source_data.py` | Source Data values of Fig. 2c–f, 3g, 3l, 3m from the analysis exports (pixel-size calibration only) | analysis CSV exports | `requirements_heart_valve_py314.txt` |
 
 ## Data
 
@@ -77,8 +81,7 @@ captured with `uv pip freeze` from the machine that produced the results.
 
 | File | Used by |
 |---|---|
-| `requirements_heart_valve_py314.txt` | zebrafish heart and valve, mouse ear, denoising, figures/videos |
-| `requirements_pulse_py314.txt` | lymphatic pulse analysis (same environment as above) |
+| `requirements_heart_valve_py314.txt` | zebrafish heart and valve, mouse ear, lymphatic pulse analysis, denoising, figures/videos |
 | `requirements_stitch_py311.txt` | stitching, `pulse_gui_main.py` |
 | `requirements_bead_py311.txt` | bead/phantom acquisition project (kept for completeness) |
 
@@ -88,7 +91,6 @@ analyses were run with the 3.14 interpreter explicitly:
 
 ```bat
 py -3.14 <script.py>
-:: = C:\Users\qicui\AppData\Local\Python\pythoncore-3.14-64\python.exe
 ```
 
 **SimpleElastix.** `simpleitk-simpleelastix 3.0.0a1.post183-g61ffa` (ITK 6.0). This is a
@@ -158,7 +160,7 @@ py -3.11 stitch_tool.py
 **Lymphatics (Fig. 3k–m)**
 
 ```bat
-:: 1. denoise (>= 100 vps recordings only)
+:: 1. denoise (lymphatic recordings)
 py -3.14 lymphatics\deepcad_batch\deepcad_train_pick.py        :: one model per recording
 py -3.14 lymphatics\deepcad_batch\deepcad_denoise_batch.py --model <name> <files>
 :: 2. pulse detection -> *_pulseresults.json
@@ -181,10 +183,15 @@ py -3.14 figures_videos\Depth_cycle_video_gui.py
 py -3.14 figures_videos\fill_to_dashed_outline.py
 ```
 
+## Calibration
+
+Pixel sizes and acquisition rates used for every reported number, the values that were set in the
+scripts at run time, and the conversion between the two are listed in [`CALIBRATION.md`](CALIBRATION.md).
+
 ## Acquisition-rate policy
 
 Cardiac recordings were acquired at 600 volumes s⁻¹; lymphatic dynamics at
-100 volumes s⁻¹ and denoised with DeepCAD-RT; ear bolus-transit recordings at
+100 volumes s⁻¹ (Fig. 3j–l) or 30 volumes s⁻¹ (pulse-to-pulse dataset, Fig. 3m), denoised with DeepCAD-RT; ear bolus-transit recordings at
 20 volumes s⁻¹ and **not** denoised; extended-field maps as stated in the Methods.
 Calibration PSF stacks were acquired with 30 µm and 150 µm z-steps, while volumes were
 reconstructed onto 20 µm, 60 µm and 12 µm axial grids depending on the experiment; the
@@ -192,8 +199,8 @@ reconstruction interpolates the measured PSFs onto the reconstruction grid.
 
 ## License
 
-Code in this repository: MIT (see [`LICENSE`](LICENSE)), except
-`matlab/third_party/MIMT`, which carries its own licence. Data on Zenodo: CC BY 4.0.
+Code in this repository: MIT (see [`LICENSE`](LICENSE)). The MIMT toolbox used by the reconstruction
+GUI is third-party software and is not redistributed here (see `matlab/third_party/README.md`). Data on Zenodo: CC BY 4.0.
 
 ## Citation
 

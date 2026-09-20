@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # NIR-II SLIM - depth-cycle video export - produces Supp. Videos 1-6
 # environment: heart_valve_py314
+# MAG_PRESETS corrected on 2026-09-20 (see CALIBRATION.md); the released videos were fixed with fix_video_overlays.py
 # copied from E:\Selected data\250902_fish\Depth cycle video gui.py.bak on 2026-09-17
 """
 depth_cycle_video_gui.py
@@ -76,10 +77,10 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 DEFAULT_DIR = r"E:\Selected data\250902_fish\6"
 # 배율 모드별 기본값 — 실제 광학계 값에 맞게 수정해서 쓰면 됨
 MAG_PRESETS = {
-    "high": dict(label="High mag", dz_um=20.0, um_per_px=11.0,
+    "high": dict(label="High mag", dz_um=20.0, um_per_px=5.616,   # 256-px frames (= 1438 um / N px; was 11.0, valid for 128-px frames)
                  bar_um=200.0),
-    "low":  dict(label="Low mag", dz_um=100.0, um_per_px=30.3,
-                 bar_um=1000.0),   # 30.3 ≈ 11 × (105.12/38.17), 실측 확인 필요
+    "low":  dict(label="Low mag", dz_um=60.0, um_per_px=17.0,    # 256-px frames (= 4352 um / N px; was dz 100, 30.3)
+                 bar_um=600.0),
 }
 DEFAULT_PERCENTILES = (0.5, 99.8)   # 수동 모드 Auto 버튼용
 AUTO_P_DEFAULT = (0.0, 100.0)       # 자동 모드 기본 = 순수 min–max

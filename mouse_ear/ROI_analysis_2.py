@@ -45,8 +45,8 @@ class TIFAnalyzer:
         self.tif_file_path = None
         
         # Scale settings
-        self.pixel_size = 11.0  # μm per pixel (default for typical mouse imaging)
-        self.frame_rate = 30.0  # fps
+        self.pixel_size = 17.0  # µm per pixel: low-magnification 256-px grid used for Fig. 3e-g (was 11.0)
+        self.frame_rate = 20.0  # volumes/s of the mouse-ear recordings (was 30.0)
         
         # Time markers for analysis range
         self.start_marker = None  # Frame index

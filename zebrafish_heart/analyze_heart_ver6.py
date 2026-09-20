@@ -1,5 +1,6 @@
 # NIR-II SLIM - zebrafish heart chamber volumes & strain - produces Fig. 2c-h
 # environment: heart_valve_py314
+# CONFIG fps / pixel_size / z_spacing set to the values reported in the paper on 2026-09-20 (see MANIFEST.md)
 # copied from D:\NIR2SLIM\NIR-II-SLIM-code\SimpleElastix\Analyze_heart_ver6.py on 2026-09-17
 """
 Zebrafish Heart Full Analysis - SimpleElastix version
@@ -69,9 +70,9 @@ if not hasattr(sitk, 'ElastixImageFilter'):
 CONFIG = {
     # filepath / output_folder는 아래 SAMPLES에서 샘플별로 지정됩니다
     'z_depths': 5,                # 촬영 조건: compare_heart_analysis_ver5와 동일
-    'fps': 400,
-    'pixel_size': 15.0,           # µm/pixel (XY)
-    'z_spacing': 30.0,            # µm (Z 간격)
+    'fps': 600,                   # acquisition rate, volumes/s (was 400 in the copied file)
+    'pixel_size': 5.616,          # µm/pixel on the 256-px segmentation grid (was 15.0; see CALIBRATION.md)
+    'z_spacing': 20.0,            # µm between reconstructed planes (was 30.0)
     'viscosity': 0.003,
 
     # 테스트용: 각 Z에서 앞 N프레임만 사용 (None이면 전체)
