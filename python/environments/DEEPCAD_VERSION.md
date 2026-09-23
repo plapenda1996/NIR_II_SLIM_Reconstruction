@@ -71,6 +71,7 @@ recordings.
 
 Environment: Python 3.14.3, PyTorch 2.11.0+cu128, RTX 4090.
 
-Trained checkpoints (`.pth` + `para.yaml`) are deposited on Zenodo
-(10.5281/zenodo.22184824). A representative `para.yaml` is included here at
-`../lymphatics_stitching/deepcad_batch/para.yaml`.
+Trained checkpoints (`.pth`) are not deposited. The training parameters
+(`para.yaml`) are included here at `../lymphatics_stitching/deepcad_batch/para.yaml`,
+and `deepcad_train_pick.py` retrains one model per recording from the raw
+lymphatic recordings on Zenodo (10.5281/zenodo.22184824).
