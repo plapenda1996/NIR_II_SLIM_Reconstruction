@@ -1,6 +1,5 @@
 # NIR-II SLIM - extended-field stitching (support module) - produces Fig. 3d, 3j (imported by stitch_tool.py / pulse_gui_main.py)
 # environment: stitch_py311
-# copied from E:\260325_stitch_process_dy_ver2\slim_recon\enhance.py on 2026-09-17
 """Canonical 2D-frame enhancement used by both the static ReconViewer
 (`slim_recon.viewer.ReconViewer`) and the Movie Viewer
 (`SLIMGui._play_recon_movie`).

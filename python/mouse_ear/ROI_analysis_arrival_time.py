@@ -1,6 +1,5 @@
 # NIR-II SLIM - mouse ear ROI kymograph (cross-check) - produces Fig. 3e-g (arrival-time cross-check)
 # environment: heart_valve_py314
-# copied from D:\NIR2SLIM\demotion\ROI_analysis_2.py on 2026-09-17
 # %%
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox

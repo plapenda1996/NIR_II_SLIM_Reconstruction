@@ -1,6 +1,5 @@
 # NIR-II SLIM - reconstruction + pulse-analysis GUI - produces produces *_pulseresults.json consumed by analyze_pulseresults.py
 # environment: stitch_py311
-# copied from E:\260325_stitch_process_dy_ver2\main.py on 2026-09-17
 """SLIM Reconstruction Pipeline — GUI Launcher.
 
 Provides a tkinter interface to:

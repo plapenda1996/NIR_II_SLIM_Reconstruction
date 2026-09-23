@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # NIR-II SLIM - lymphatic pulse detection - produces Fig. 3k-m
 # environment: pulse_py314
-# copied from E:\260325_stitch_process_dy_ver2\pulse_pipeline_standalone.py on 2026-09-17
 """
 pulse_pipeline_standalone.py
 ============================

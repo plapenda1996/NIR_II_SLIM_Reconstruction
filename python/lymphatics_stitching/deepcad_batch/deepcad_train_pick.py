@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # NIR-II SLIM - self-supervised denoising (training) - produces Fig. 3j-m, Supp. Fig. 6d
 # environment: heart_valve_py314
-# copied from D:\NIR2SLIM\DeepCAD_RT_pytorch_ver2\deepcad_train_pick.py on 2026-09-17
 """
 deepcad_train_pick.py  -  train a DeepCAD model on FILES YOU SELECT
 ===================================================================

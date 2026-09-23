@@ -1,6 +1,5 @@
 # NIR-II SLIM - mouse ear bolus velocity - produces Fig. 3e-g
 # environment: heart_valve_py314
-# copied from D:\NIR2SLIM\demotion\ROI_analysis_mouse_ear.py on 2026-09-17
 # %%
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox

@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # NIR-II SLIM - self-supervised denoising (inference) - produces Fig. 3j-m, Supp. Fig. 6d
 # environment: heart_valve_py314
-# copied from D:\NIR2SLIM\DeepCAD_RT_pytorch_ver2\Deepcad denoise batch.py on 2026-09-17
 """
 DeepCAD 배치 디노이징 스크립트 (순수 Python 버전)
 ====================================================

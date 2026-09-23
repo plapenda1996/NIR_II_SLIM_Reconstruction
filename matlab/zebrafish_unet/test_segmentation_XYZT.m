@@ -1,6 +1,5 @@
 % NIR-II SLIM - zebrafish chamber segmentation (MATLAB U-Net) - produces Fig. 2b-h masks
 % environment: MATLAB R2024a
-% copied from D:\NIR_SLIM2\test_segmentation_XYZT.m on 2026-09-17
 % Load and segment XYZT data with dual labels
 % This script loads multiple z-layers and processes them together
 %% Configuration

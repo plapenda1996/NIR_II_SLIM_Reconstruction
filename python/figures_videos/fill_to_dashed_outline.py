@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # NIR-II SLIM - segmentation overlay styling - produces Fig. 2 panels (dashed chamber outlines)
 # environment: heart_valve_py314
-# copied from E:\Selected data\250902_fish\fill_to_dashed_outline.py on 2026-09-17
 """
 segmentation_4D_RGB.tif 의 라벨 표시 방식을 바꾸는 스크립트.
 

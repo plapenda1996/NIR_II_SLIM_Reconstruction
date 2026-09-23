@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # NIR-II SLIM - lymphatic pulse statistics - produces Fig. 3k-m; 885 +/- 149 um/s, transport distance, FWHM
 # environment: pulse_py314
-# copied from E:\260325_stitch_process_dy_ver2\analyze_pulseresults_revised.py on 2026-09-17
 """
 analyze_pulseresults.py  (calibrated edition)
 =============================================

@@ -1,6 +1,5 @@
 // NIR-II SLIM - zebrafish heart registration - produces Fig. 2c-h (resolved elastix parameter map)
 // environment: SimpleElastix 3.0.0a1.post183
-// copied from D:\NIR2SLIM\NIR-II-SLIM-code\SimpleElastix\TransformParameters.0.txt on 2026-09-17
 (BSplineTransformSplineOrder 3)
 (Direction 1 0 0 1)
 (FixedImageDimension 2)

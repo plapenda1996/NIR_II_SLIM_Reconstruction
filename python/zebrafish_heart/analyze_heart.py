@@ -1,7 +1,6 @@
 # NIR-II SLIM - zebrafish heart chamber volumes & strain - produces Fig. 2c-h
 # environment: heart_valve_py314
-# CONFIG fps / pixel_size / z_spacing set to the values reported in the paper on 2026-09-20 (see MANIFEST.md)
-# copied from D:\NIR2SLIM\NIR-II-SLIM-code\SimpleElastix\Analyze_heart_ver6.py on 2026-09-17
+# CONFIG fps / pixel_size / z_spacing hold the values reported in the paper (see CALIBRATION.md)
 """
 Zebrafish Heart Full Analysis - SimpleElastix version
 

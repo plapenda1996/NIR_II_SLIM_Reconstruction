@@ -1,6 +1,5 @@
 # NIR-II SLIM - extended-field stitching - produces Fig. 3d, 3j
 # environment: stitch_py311
-# copied from E:\260325_stitch_process_dy_ver2\stitch_tool.py on 2026-09-17
 """SLIM Reconstruction Stitching Tool.
 
 Interactive tool to:

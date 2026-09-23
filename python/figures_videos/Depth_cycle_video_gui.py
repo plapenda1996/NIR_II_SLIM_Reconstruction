@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# NIR-II SLIM - depth-cycle video export - produces Supp. Videos 1-6
+# NIR-II SLIM - depth-cycle video export - produces Supp. Videos 1-7
 # environment: heart_valve_py314
-# MAG_PRESETS corrected on 2026-09-20 (see CALIBRATION.md); the released videos were fixed with fix_video_overlays.py
-# copied from E:\Selected data\250902_fish\Depth cycle video gui.py.bak on 2026-09-17
+# MAG_PRESETS hold the calibrated pixel sizes (see CALIBRATION.md); the released videos were corrected with fix_video_overlays.py
 """
 depth_cycle_video_gui.py
 

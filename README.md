@@ -26,7 +26,7 @@ NIR_II_SLIM_Reconstruction/
 │   └── environments/            Python dependency lists, DeepCAD-RT provenance
 ├── CALIBRATION.md               pixel sizes and acquisition rates: values in the paper vs. values in the scripts
 ├── MANIFEST.md                  every copied file: origin, hash, figure panels, environment
-└── PATHS.md                     every hard-coded data path and the dataset it refers to
+└── PATHS.md                     every hard-coded data path and the Zenodo file it refers to
 ```
 
 MATLAB code lives under `matlab/`, Python code under `python/`. The stitching and lymphatic scripts share one
@@ -39,7 +39,7 @@ from its own directory (this is how they were laid out on the analysis machine).
 |---|---|---|---|
 | `matlab/slim_app/main.mlapp`, `matlab/slim_app/` | all reconstructed volumes | raw `.raw` + `*_geo_*.mat` + `*_psf_*.mat` | MATLAB R2024a |
 | `matlab/zebrafish_unet/test_segmentation_XYZT*.m` | chamber masks, Fig. 2b–h | reconstructed zebrafish stacks | MATLAB R2024a |
-| `python/zebrafish_heart/analyze_heart.py` | per-plane areas, dV/dt and perimeter strain rate (Fig. 2g,h); for the published Fig. 2c–f values see [`python/zebrafish_heart/README.md`](python/zebrafish_heart/README.md) | `segmentation_4D_RGB_*.tif` | `python/environments/requirements_analysis.txt` |
+| `python/zebrafish_heart/analyze_heart.py` | per-plane chamber areas, dV/dt and perimeter strain rate — Fig. 2c–h (CONFIG holds the values reported in the paper; see `CALIBRATION.md`) | `segmentation_4D_RGB_*.tif` | `python/environments/requirements_analysis.txt` |
 | `python/zebrafish_heart/elastix_bspline_params_resolved.txt` | the resolved B-spline parameter map actually used | — | SimpleElastix 3.0.0a1.post183 |
 | `python/zebrafish_heart/valve_analysis.py` | valve opening/closing kinetics — Fig. 2i–m | reconstructed zebrafish stacks, manual leaflet annotations | `python/environments/requirements_analysis.txt` |
 | `python/zebrafish_heart/leaflet_unet.py` | constants and helper functions imported by `valve_analysis.py`; its U-Net tracking branch was **not** used for the paper (`USE_UNET_VALVE_TRACKING = False`) | — | `python/environments/requirements_analysis.txt` |
@@ -51,7 +51,7 @@ from its own directory (this is how they were laid out on the analysis machine).
 | `python/lymphatics_stitching/analyze_pulseresults.py` | pulse velocity (885 ± 149 µm s⁻¹ with the 4.0 µm/px used at run time = 941 ± 158 µm s⁻¹ after calibration to 4.25 µm/px, see `CALIBRATION.md`), transport distance, FWHM, bolus end positions — Fig. 3k–m | `*_pulseresults.json` | `python/environments/requirements_analysis.txt` |
 | `python/lymphatics_stitching/deepcad_batch/deepcad_train_pick.py` | per-recording DeepCAD-RT models | raw lymphatic recordings | `python/environments/requirements_analysis.txt` |
 | `python/lymphatics_stitching/deepcad_batch/deepcad_denoise_batch.py` | denoised stacks — Fig. 3j–m, Supp. Fig. 6d | raw + trained `.pth` | `python/environments/requirements_analysis.txt` |
-| `python/figures_videos/paw_suppfig.py` | SBR/CNR and FWHM vs depth (Supp. Fig. 6), paw panels (Supp. Fig. 7) | reconstructed `record_*_rl.mat` | `python/environments/requirements_analysis.txt` |
+| `python/figures_videos/paw_suppfig.py` | SBR/CNR vs depth (Supp. Fig. 6), paw panels (Supp. Fig. 7) | reconstructed `record_*_rl.mat` | `python/environments/requirements_analysis.txt` |
 | `python/figures_videos/Depth_cycle_video_gui.py` | Supplementary Videos 1–7 (overlays corrected afterwards with `fix_video_overlays.py`) | per-depth TIFF stacks | `python/environments/requirements_analysis.txt` |
 | `python/figures_videos/fix_video_overlays.py` | scale bars / time stamps of the released Supplementary Videos (post-export correction) | exported MP4 | `python/environments/requirements_analysis.txt` + ffmpeg |
 | `python/figures_videos/fill_to_dashed_outline.py` | dashed chamber outlines used in Fig. 2 panels | `segmentation_4D_RGB.tif` | `python/environments/requirements_analysis.txt` |
@@ -195,6 +195,11 @@ py -3.14 python\source_data\rescale_source_data.py --in-dir analysis_exports --o
 The numerical simulations of Supplementary Notes 1 and 2 (Supplementary Figs. 8–10, Supplementary Table 1) and the scripts for the
 calibration-pinhole, USAF-target and bead measurements (Fig. 1g, Supplementary Figs. 3–5) are available from the corresponding author on request.
 
+## Provenance
+
+`MANIFEST.md` lists every code file with its hash and the few CONFIG values that differ between the released
+scripts and the versions as run (`Changes relative to the files as run`).
+
 ## Calibration
 
 Pixel sizes and acquisition rates used for every reported number, the values that were set in the
@@ -216,7 +221,6 @@ GUI is third-party software and is not redistributed here (see `matlab/third_par
 
 ## Citation
 
-<<<<<<< HEAD
 Preprint DOI 10.64898/2026.08.13.744709; dataset DOI 10.5281/zenodo.22184824
 (https://doi.org/10.5281/zenodo.22184824).
 
@@ -224,10 +228,3 @@ Preprint DOI 10.64898/2026.08.13.744709; dataset DOI 10.5281/zenodo.22184824
 
 Author: <plapenda@ucla.edu>  
 Corresponding author: <gaol@ucla.edu>
-=======
-Preprint DOI 10.64898/2026.08.13.744709; dataset DOI 10.5281/zenodo.22184824.
-
-## Contact
-Author: plapenda@ucla.edu
-Corresponding author: gaol@ucla.edu
->>>>>>> fbee0a8d162a429adf6e96fbfd2e74f50b2f3493

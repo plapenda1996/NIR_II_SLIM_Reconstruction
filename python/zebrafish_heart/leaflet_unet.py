@@ -1,6 +1,5 @@
 # NIR-II SLIM - zebrafish valve leaflet segmentation - produces Fig. 2i-m
 # environment: heart_valve_py314
-# copied from E:\Selected data\250902_fish\leaflet_unet.py on 2026-09-17
 """
 leaflet_unet.py
 ===============

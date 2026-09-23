@@ -65,12 +65,13 @@ One model per recording.
 
 ## Applied to
 
-Fluorescence recordings at >= 100 volumes/s (lymphatic dynamics, Fig. 3j-m;
-Supp. Fig. 6d). **Not** applied to dark-field zebrafish data or to 20-vps ear
-recordings.
+The lymphatic dynamics recordings (100 volumes/s, Fig. 3j-l and Supp. Fig. 6d;
+30 volumes/s, Fig. 3m). **Not** applied to dark-field zebrafish data or to the
+20-vps ear recordings.
 
 Environment: Python 3.14.3, PyTorch 2.11.0+cu128, RTX 4090.
 
-Trained checkpoints (`.pth` + `para.yaml`) are deposited on Zenodo
-(10.5281/zenodo.22184824). A representative `para.yaml` is included here at
-`../lymphatics_stitching/deepcad_batch/para.yaml`.
+Trained checkpoints (`.pth`) are not deposited. The training parameters (`para.yaml`)
+are included here at `../lymphatics_stitching/deepcad_batch/para.yaml`, and
+`deepcad_train_pick.py` retrains one model per recording from the raw lymphatic
+recordings on Zenodo (10.5281/zenodo.22184824).

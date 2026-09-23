@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# NIR-II SLIM - paw supplementary figure + SBR/CNR/FWHM vs depth - produces Supp. Fig. 6 (SBR/CNR, FWHM vs z), Supp. Fig. 7
+# NIR-II SLIM - paw supplementary figure + SBR/CNR/FWHM vs depth - produces Supp. Fig. 6 (SBR/CNR vs depth), Supp. Fig. 7
 # environment: heart_valve_py314
-# copied from E:\Selected data\260310_mouse_paw\paw_suppfig_revised.py on 2026-09-17
 """
 paw_suppfig.py (v2) — NIR-II SLIM: Supplementary Figure panels + Supplementary Video from an
 ALREADY-reconstructed time series (record_*_rl.mat), using ONE representative volume (middle frame).

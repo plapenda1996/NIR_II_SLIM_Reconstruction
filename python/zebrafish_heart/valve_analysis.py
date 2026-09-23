@@ -1,6 +1,5 @@
 # NIR-II SLIM - zebrafish valve kinetics - produces Fig. 2i-m
 # environment: heart_valve_py314
-# copied from E:\Selected data\250902_fish\valve_analysis.py on 2026-09-17
 """
 Heart valve motion analysis from a TIFF stack (intensity-only, low SNR, fast motion).
 
