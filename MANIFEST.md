@@ -92,7 +92,7 @@ reversed without re-running the search.
 - DeepCAD-RT source — third-party; see `python/environments/DEEPCAD_VERSION.md`.
 - All data files (`.tif`, `.mat`, `.raw`, `.mp4`) — on Zenodo; `.pth` checkpoints and `.npz` intermediates — not deposited.
 - Superseded script versions listed in the table above.
-- `PulseFlowAnalyzer.py` / `PulseFlowAnalyzer_v2.py` (`D:\NIR2SLIM\demotion\`, 2026-04) — an earlier concatenated-stack pulse/flow tool superseded by `pulse_pipeline_standalone.py`; **confirm before release** if any reported number came from it.
+- `PulseFlowAnalyzer.py` / `PulseFlowAnalyzer_v2.py` (`D:\NIR2SLIM\demotion\`, 2026-04) — an earlier concatenated-stack pulse/flow tool superseded by `pulse_pipeline_standalone.py`;
 - `heart3d.py` (parametric cartoon heart model), `compare_coverage.py`, `Nature style plots.py`, `depth scalebar export.py` (code fragments, not runnable scripts).
 
 > The MIMT toolbox that was previously vendored under `matlab/third_party/MIMT/` has been removed; see `matlab/third_party/README.md`.
