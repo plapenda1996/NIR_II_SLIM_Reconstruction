@@ -9,6 +9,6 @@ __pycache__/
 *.pth
 *.npz
 *.mat
-!matlab/third_party/MIMT/**/*.mat
+!matlab/third_party/MIMT/
 .DS_Store
 Thumbs.db
