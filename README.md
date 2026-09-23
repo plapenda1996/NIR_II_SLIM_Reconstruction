@@ -8,16 +8,6 @@ a volume, giving continuous volumetric imaging at up to 600 volumes s⁻¹. This
 holds the MATLAB reconstruction code and the Python and MATLAB analysis code that
 produced the figures and the numbers reported in the paper.
 
-# NIR-II SLIM — reconstruction and analysis code
-
-Squeezed light-field imaging microscopy (SLIM) for volumetric imaging in the second
-near-infrared window (1,000–1,700 nm). A single 640 × 512 InGaAs sensor records a light
-field that has been rotated by a Dove prism and anamorphically compressed, so that many
-angular views share the detector without tiling it. One camera frame is deconvolved into
-a volume, giving continuous volumetric imaging at up to 600 volumes s⁻¹. This repository
-holds the MATLAB reconstruction code and the Python and MATLAB analysis code that
-produced the figures and the numbers reported in the paper.
-
 ## Repository map
 
 ```
@@ -70,16 +60,30 @@ from its own directory (this is how they were laid out on the analysis machine).
 
 ## Data
 
-All datasets, trained DeepCAD-RT checkpoints and the SimpleElastix wheel are deposited on
-Zenodo: **10.5281/zenodo.22184824**.
+All datasets are deposited on Zenodo: **10.5281/zenodo.22184824** (CC BY 4.0, 11.5 GB).
+No data files are stored in this repository.
 
-No data files are stored in this repository. The scripts were copied unmodified from the
-analysis machine, so they still contain the absolute paths they were run with
-(`E:\Selected data\...`, `D:\NIR_SLIM\...`). Every one of those literals is listed in
-[`PATHS.md`](PATHS.md) together with the Zenodo dataset it refers to. To reproduce a
-result, download the dataset and either edit the literal in the script or place the data
-at the same path. `stitch_tool.py` and `pulse_gui_main.py` also accept paths through their
-file dialogs, so no edit is needed when they are used interactively.
+| Zenodo file | contents | used for |
+|---|---|---|
+| `fig2_zebrafish_WT.raw`, `fig2_zebrafish_WEA.raw` | raw camera frames of the wild-type and *wea* zebrafish heart recordings, 600 volumes s⁻¹ | Fig. 2, Supplementary Videos 1–2 |
+| `fig3d-g_mouse_ear.raw` | raw camera frames of the mouse-ear recordings (extended-field map and bolus transit, 20 volumes s⁻¹) | Fig. 3d–g, Supplementary Videos 3–4 |
+| `fig3j_lymphatics_stitch_tiles.raw` | raw tiles of the lymphatic extended-field map | Fig. 3j |
+| `fig3k-m_lymphatics_roi1.raw`, `fig3k-m_lymphatics_roi2.raw` | raw camera frames of the lymphatic dynamics recordings (100 and 30 volumes s⁻¹) | Fig. 3k–m, Supplementary Videos 6–7 |
+| `Supple_fig7_mouse_paw.raw` | raw camera frames of the hind-paw recording | Supplementary Fig. 7, Supplementary Video 5 |
+| `Source_data.zip` | source-data CSV files of the main figures, the Fig. 1 USAF/phantom data, representative reconstructed volumes, and the `*_geo_*.mat` / `*_psf_*.mat` calibration files of every dataset | all figures |
+
+Each `.raw` file is a sequence of 640 × 512 uint16 camera frames, little-endian, with no
+header; reconstruction needs the matching `*_geo_*.mat` and `*_psf_*.mat` files from
+`Source_data.zip`. The trained DeepCAD-RT checkpoints and the SimpleElastix wheel are not
+deposited; retrain with `python/lymphatics_stitching/deepcad_batch/deepcad_train_pick.py`
+(parameters in `para.yaml`) and see the SimpleElastix note below.
+
+The scripts were copied unmodified from the analysis machine, so they still contain the
+absolute paths they were run with (`E:\Selected data\...`, `D:\NIR_SLIM\...`). Every one of
+those literals is listed in [`PATHS.md`](PATHS.md) together with the Zenodo file it refers
+to. To reproduce a result, download the file and either edit the literal in the script or
+place the data at the same path. `stitch_tool.py` and `pulse_gui_main.py` also accept paths
+through their file dialogs, so no edit is needed when they are used interactively.
 
 ## Environments
 
@@ -104,9 +108,9 @@ py -3.14 <script.py>
 ```
 
 **SimpleElastix.** `simpleitk-simpleelastix 3.0.0a1.post183-g61ffa` (ITK 6.0). This is a
-pre-release snapshot build and may not remain installable from PyPI; the wheel and the
-resolved elastix parameter file are deposited on Zenodo. The resolved parameter map is
-also in this repository at `python/zebrafish_heart/elastix_bspline_params_resolved.txt`.
+pre-release snapshot build and may not remain installable from PyPI; the wheel is not
+redistributed. The resolved elastix parameter map actually used is in this repository at
+`python/zebrafish_heart/elastix_bspline_params_resolved.txt`.
 
 **DeepCAD-RT.** Not redistributed here. The upstream commit, the two local modifications,
 verification hashes and the training parameters are in
@@ -189,7 +193,7 @@ py -3.14 python\source_data\rescale_source_data.py --in-dir analysis_exports --o
 ## Not included in this release
 
 The numerical simulations of Supplementary Notes 1 and 2 (Supplementary Figs. 8–10, Supplementary Table 1) and the scripts for the
-calibration-pinhole, USAF-target and bead measurements (Fig. 1g, Supplementary Figs. 3–5).
+calibration-pinhole, USAF-target and bead measurements (Fig. 1g, Supplementary Figs. 3–5) are available from the corresponding author on request.
 
 ## Calibration
 
@@ -212,9 +216,10 @@ GUI is third-party software and is not redistributed here (see `matlab/third_par
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff). Preprint DOI 10.64898/2026.08.13.744709; dataset DOI
-10.5281/zenodo.22184824.
+Preprint DOI 10.64898/2026.08.13.744709; dataset DOI 10.5281/zenodo.22184824
+(https://doi.org/10.5281/zenodo.22184824).
 
 ## Contact
 
-Corresponding author: gaol@ucla.edu
+Author: <plapenda@ucla.edu>  
+Corresponding author: <gaol@ucla.edu>
