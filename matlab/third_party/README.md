@@ -14,5 +14,5 @@ addpath(genpath('matlab/third_party/MIMT'))   % if unpacked here; any other loca
 savepath                                       % optional
 ```
 
-If a copy is committed to this repository, keep the toolbox's own licence file next to it. `.gitignore` excludes `*.mat`
-everywhere except `matlab/third_party/MIMT/`, so the toolbox's lookup tables would be tracked.
+   If a copy is committed to this repository, keep the toolbox's own licence file next to it. `.gitignore` excludes `*.mat`
+   everywhere except `matlab/third_party/MIMT/`, so the toolbox's lookup tables would be tracked.
