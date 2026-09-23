@@ -216,6 +216,7 @@ GUI is third-party software and is not redistributed here (see `matlab/third_par
 
 ## Citation
 
+<<<<<<< HEAD
 Preprint DOI 10.64898/2026.08.13.744709; dataset DOI 10.5281/zenodo.22184824
 (https://doi.org/10.5281/zenodo.22184824).
 
@@ -223,3 +224,10 @@ Preprint DOI 10.64898/2026.08.13.744709; dataset DOI 10.5281/zenodo.22184824
 
 Author: <plapenda@ucla.edu>  
 Corresponding author: <gaol@ucla.edu>
+=======
+Preprint DOI 10.64898/2026.08.13.744709; dataset DOI 10.5281/zenodo.22184824.
+
+## Contact
+Author: plapenda@ucla.edu
+Corresponding author: gaol@ucla.edu
+>>>>>>> fbee0a8d162a429adf6e96fbfd2e74f50b2f3493
